@@ -1,0 +1,86 @@
+/* ===== Base + Theme Variables ===== */
+:root {
+    --bg: #0c0d11;
+    --bg-soft: #121420;
+    --card: #151828;
+    --text: #e9eef7;
+    --muted: #aab3c7;
+    --line: #23283a;
+    --accent: #6dd6ff;
+    --accent-2: #78f2b0;
+    --danger: #ff7b7b;
+  
+    --radius: 14px;
+    --ring-blur: 0 0 0 4px rgba(109,214,255,.28);
+  }
+  
+  body[data-theme="light"] {
+    --bg: #f6f8fc;
+    --bg-soft: #ffffff;
+    --card: #ffffff;
+    --text: #0c1020;
+    --muted: #5b657d;
+    --line: #dfe4ef;
+    --accent: #2563eb;   
+    --accent-2: #059669; 
+    --danger: #dc2626;
+  }
+  
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    background:
+      radial-gradient(1200px 700px at 10% -10%, var(--bg-soft) 0%, var(--bg) 55%, var(--bg) 100%),
+      var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+  }
+  
+  .wrap { max-width: 920px; margin: 0 auto; padding: 1.25rem; }
+  
+  h1, h2 { margin: 0 0 .5rem; letter-spacing: .3px; }
+  .subtitle { color: var(--muted); margin: .25rem 0 0; }
+  
+  .header-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: .75rem;
+  }
+  .header-row .subtitle {
+    grid-column: 1 / -1;
+  }
+  
+  section {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  
+
+  button {
+    font: inherit;
+    cursor: pointer;
+  }
+  
+  button.ghost {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text);
+    padding: .45rem .75rem;
+    border-radius: 10px;
+  }
+  button.ghost:hover { border-color: var(--accent); }
+  button.ghost:focus-visible { outline: none; box-shadow: var(--ring-b)
+  }  

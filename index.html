@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rock • Paper • Scissors</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="wrap">
+    <h1>Rock • Paper • Scissors</h1>
+    <button id="theme-toggle" type="button" class="ghost" aria-pressed="false" aria-label="Toggle theme">
+        Toggle Theme
+      </button>
+    <p class="subtitle">Pick your throw and face the computer.</p>
+  </header>
+
+  <main class="wrap">
+    <!-- 1) Player throw section -->
+    <section aria-labelledby="player-heading">
+      <h2 id="player-heading">Your Throw</h2>
+
+      <div class="grid-3" role="group" aria-label="Choose rock, paper, or scissors">
+        <figure class="choice" data-move="rock">
+          <button class="throw-btn" type="button" aria-pressed="false">
+            <img src="rock.png" alt="Rock" />
+          </button>
+          <figcaption>Rock</figcaption>
+        </figure>
+
+        <figure class="choice" data-move="paper">
+          <button class="throw-btn" type="button" aria-pressed="false">
+            <img src="paper.png" alt="Paper" />
+          </button>
+          <figcaption>Paper</figcaption>
+        </figure>
+
+        <figure class="choice" data-move="scissors">
+          <button class="throw-btn" type="button" aria-pressed="false">
+            <img src="scissors.png" alt="Scissors" />
+          </button>
+          <figcaption>Scissors</figcaption>
+        </figure>
+      </div>
+      <p class="hint">Click an image to lock in your throw.</p>
+    </section>
+
+    <!-- 2) Computer throw section -->
+    <section aria-labelledby="computer-heading">
+      <h2 id="computer-heading">Computer’s Throw</h2>
+      <figure class="computer">
+        <img id="computer-img" src="question-mark.png" alt="Waiting for computer choice" />
+        <figcaption id="computer-status" aria-live="polite">Waiting…</figcaption>
+      </figure>
+    </section>
+
+    <!-- 3) Outcome section -->
+    <section aria-labelledby="outcome-heading">
+      <h2 id="outcome-heading">Outcome</h2>
+      <p id="outcome" class="outcome" aria-live="polite">Make your move!</p>
+      <div class="actions">
+        <button id="play-again" type="button" class="secondary">Play Again</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="score-heading">
+      <h2 id="score-heading">Scoreboard</h2>
+      <div class="score">
+        <p>Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+        <p>Ties: <span id="ties">0</span></p>
+      </div>
+      <div class="actions">
+        <button id="reset" type="button" class="danger">Reset Score</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap smallprint">
+    <p>Images are placeholders—store yours in <code>images/</code> and keep relative paths.</p>
+  </footer>
+</body>
+</html>
